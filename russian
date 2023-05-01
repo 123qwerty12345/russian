@@ -1,30 +1,58 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Pon hub(discord.gg/tA3M5gZNdT)", "DarkTheme")
+local Window = Library.CreateLib("Pon hub", "DarkTheme")
 
 -- MAIN
-local Main = Window:NewTab("Основной")
-local MainSection = Main:NewSection("Основной")
+local Main = Window:NewTab("Другие скрипты")
+local MainSection = Main:NewSection("Другие скрипты")
 
-MainSection:NewButton("Infinity Yield", "скрипт администратора", function()
+MainSection:NewButton("Infinity Yield", "администраторский скрипт", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 end)
 
-MainSection:NewButton("Cmd X", "скрипт администратора", function()
+MainSection:NewButton("Cmd X", "администраторский скрипт", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source"))()
 end)
 
-MainSection:NewButton("Owl Hub", "универсальный эсп и аимбот", function()
+MainSection:NewButton("Owl Hub", "обычный вх и аимбот", function()
      loadstring(game:HttpGet(("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"),true))()
 end)
 
-MainSection:NewButton("Keyboard(mobile)", "клавиатура для мобильного", function()
+MainSection:NewButton("Keyboard(mobile)", "клавиатура для телефона", function()
      loadstring(game:HttpGet(("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt"),true))()
+end)
+
+local Main = Window:NewTab("Игрок")
+local MainSection = Main:NewSection("Игрок")
+
+MainSection:NewToggle("Бесконечный прыжок", "прыгни", function()
+        local InfiniteJumpEnabled = true
+        game:GetService("UserInputService").JumpRequest:connect(function()
+            if InfiniteJumpEnabled then
+                game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+            end
+        end)
+    end)
+
+    MainSection:NewSlider("Скорость", "Скорость.", 500, 16, function(s)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+    end)
+
+    MainSection:NewSlider("Сила прыжка", "прыгни", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+    end)
+
+MainSection:NewButton("Noclip(нажми n)", "ходи сквозь стены", function()
+     loadstring(game:HttpGet(("https://raw.githubusercontent.com/prosko1234/noclip/main/noclip.lua"),true))()
+end)
+
+MainSection:NewButton("Fly(нажми e)", "летай бесплатно", function()
+     loadstring(game:HttpGet(("https://raw.githubusercontent.com/prosko1234/Fly/main/script.lua"),true))()
 end)
 
 local Main = Window:NewTab("Arsenal")
 local MainSection = Main:NewSection("Arsenal")
 
-MainSection:NewButton("Owl Hub", "Работает на Arsenal", function()
+MainSection:NewButton("Owl Hub", "работает на arsenal", function()
      loadstring(game:HttpGet(("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"),true))()
 end)
 
@@ -35,11 +63,11 @@ end)
 local Main = Window:NewTab("Doors")
 local MainSection = Main:NewSection("Doors")
 
-MainSection:NewButton("Vynixius", "Нормальный скрипт", function()
+MainSection:NewButton("Vynixius", "нормальный скрипт", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Doors/Loader.lua"))()
 end)
 
-MainSection:NewButton("Msdoors", "Хороший скрипт", function()
+MainSection:NewButton("Msdoors", "хороший script", function()
     loadstring(game:HttpGet(("https://raw.githubusercontent.com/mstudio45/MSDOORS/main/MSDOORS.lua"),true))()
 end)
 
@@ -51,7 +79,7 @@ MainSection:NewButton("Ominous Vibe", "ButtonInfo", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/OminousVibes-Exploit/Scripts/main/doors/loadstring.lua"))()
 end)
 
-MainSection:NewButton("Morph", "Тролить людей", function()
+MainSection:NewButton("Morph", "Троль людей", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/ChronoAccelerator/Public-Scripts/main/Morphing/MorphScript.lua"))()
 end)
 
@@ -67,7 +95,7 @@ MainSection:NewButton("NooVster", "обычный скрипт", function()
      loadstring(game:HttpGet(('https://raw.githubusercontent.com/NooVster/404/main/Source')))()
 end)
 
-MainSection:NewButton("Скин чейнджер", "не визуальный", function()
+MainSection:NewButton("Skin changer", "не визуальный", function()
      loadstring(game:HttpGet(("https://raw.githubusercontent.com/prosko1234/skinchanger/main/skinchanger.lua"),true))()
 end)
 
@@ -75,6 +103,16 @@ end)
 local Main = Window:NewTab("Jailbreak")
 local MainSection = Main:NewSection("Jailbreak")
 
-MainSection:NewButton("Авто ограбление", "не мой скрипт", function()
+MainSection:NewButton("АвтоОграбление", "не мой скрипт", function()
      loadstring(game:HttpGet(("https://api.luarmor.net/files/v3/loaders/5d4b0843f800d5dcac07568e18190b7e.lua"),true))()
 end)
+
+
+    local Credits = Window:NewTab("Создатели")
+    local CreditsSection = Credits:NewSection("Создатели")
+
+
+    CreditsSection:NewLabel("Created by pon228#3970")
+
+
+    CreditsSection:NewLabel("Discrod: discord.gg/tA3M5gZNdT")
