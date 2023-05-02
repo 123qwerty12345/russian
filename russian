@@ -107,6 +107,14 @@ MainSection:NewButton("АвтоОграбление", "не мой скрипт"
      loadstring(game:HttpGet(("https://api.luarmor.net/files/v3/loaders/5d4b0843f800d5dcac07568e18190b7e.lua"),true))()
 end)
 
+local Main = Window:NewTab("Double Down")
+local MainSection = Main:NewSection("Double Down")
+
+
+MainSection:NewButton("Blockdrop(автовыйграш)", "нажмите, когда начнется игра", function()
+     loadstring(game:HttpGet(("https://raw.githubusercontent.com/prosko1234/blockdrop/main/autofarm"),true))()
+end)
+
 
     local Credits = Window:NewTab("Создатели")
     local CreditsSection = Credits:NewSection("Создатели")
